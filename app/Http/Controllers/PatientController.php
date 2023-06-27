@@ -35,9 +35,15 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        Patient::create($request->all());
-
+        $user = Auth::user(); // Get the currently authenticated user
+        $patientData = $request->all();
+        $patientData['user_id'] = $user->id; // Associate the user_id with the authenticated user
+    
+        Patient::create($patientData);
+    
         return redirect()->route('patients')->with('success', 'Patient added successfully');
+
+        
     }
 
     /**

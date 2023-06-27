@@ -1,46 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Codex - Login Form Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Login Form Template" name="keywords">
+        <meta content="Login Form Template" name="description">
 
-</head>
-<body>
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+        <style>
+                        /* * * * * General CSS * * * * */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                color: #666666;
+                background: #eaeff4;
+            }
+
+            .clearfix::after {
+                content: '';
+                clear: both;
+                display: table;
+            }
+
+            .wrapper {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 1140px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .container {
+                position: relative;
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                display: flex;
+                background: #ffffff;
+                box-shadow: 0 0 5px #999999;
+            }
+
+            div.credit {
+                position: relative;
+                margin: 25px auto 0 auto;
+                width: 100%;
+                text-align: center;
+                color: #666666;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            div.credit a {
+                color: #222222;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+
+            /* * * * * Login 1 CSS * * * * */
+            .login-1 .col-left,
+            .login-1 .col-right {
+                padding: 30px;
+                display: flex;
+            }
+
+            .login-1 .col-left {
+                width: 60%;
+                -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+                clip-path: polygon(0 0, 0% 100%, 100% 0);
+                background: #44c7f5;
+            }
+
+            .login-1 .col-right {
+                padding: 60px 30px;
+                width: 50%;
+                margin-left: -10%;
+            }
+
+            @media(max-width: 575.98px) {
+                .login-1 .container {
+                    flex-direction: column;
+                    box-shadow: none;
+                }
+                
+                .login-1 .col-left,
+                .login-1 .col-right {
+                    width: 100%;
+                    margin: 0;
+                    -webkit-clip-path: none;
+                    clip-path: none;
+                }
+                
+                .login-1 .col-right {
+                    padding: 30px;
+                }
+            }
+
+            .login-1 .login-text {
+                position: relative;
+                width: 100%;
+                color: #ffffff;
+            }
+
+            .login-1 .login-text h2 {
+                margin: 0 0 15px 0;
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            .login-1 .login-text p {
+                margin: 0 0 20px 0;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+            }
+
+            .login-1 .login-text .btn {
+                display: inline-block;
+                padding: 7px 20px;
+                font-size: 16px;
+                letter-spacing: 1px;
+                text-decoration: none;
+                border-radius: 30px;
+                color: #ffffff;
+                outline: none;
+                border: 1px solid #ffffff;
+                box-shadow: inset 0 0 0 0 #ffffff;
+                transition: .3s;
+                -webkit-transition: .3s;
+            }
+
+            .login-1 .login-text .btn:hover {
+                color: #44c7f5;
+                box-shadow: inset 150px 0 0 0 #ffffff;
+            }
+
+            .login-1 .login-form {
+                position: relative;
+                width: 100%;
+            }
+
+            .login-1 .login-form h2 {
+                margin: 0 0 15px 0;
+                font-size: 22px;
+                font-weight: 700;
+            }
+
+            .login-1 .login-form p {
+                margin: 0 0 10px 0;
+                text-align: left;
+                color: #666666;
+                font-size: 15px;
+            }
+
+            .login-1 .login-form p:last-child {
+                margin: 0;
+                padding-top: 3px;
+            }
+
+            .login-1 .login-form p a {
+                color: #44c7f5;
+                font-size: 14px;
+                text-decoration: none;
+            }
+
+            .login-1 .login-form label {
+                display: block;
+                width: 100%;
+                margin-bottom: 2px;
+                letter-spacing: .5px;
+            }
+
+            .login-1 .login-form p:last-child label {
+                width: 60%;
+                float: left;
+            }
+
+            .login-1 .login-form label span {
+                color: #ff574e;
+                padding-left: 2px;
+            }
+
+            .login-1 .login-form input {
+                display: block;
+                width: 100%;
+                height: 35px;
+                padding: 0 10px;
+                outline: none;
+                border: 1px solid #cccccc;
+                border-radius: 30px;
+            }
+
+            .login-1 .login-form input:focus {
+                border-color: #ff574e;
+            }
+
+            .login-1 .login-form button,
+            .login-1 .login-form input[type=submit] {
+                display: inline-block;
+                width: 100%;
+                margin-top: 5px;
+                color: #44c7f5;
+                font-size: 16px;
+                letter-spacing: 1px;
+                cursor: pointer;
+                background: transparent;
+                border: 1px solid #44c7f5;
+                border-radius: 30px;
+                box-shadow: inset 0 0 0 0 #44c7f5;
+                transition: .3s;
+                -webkit-transition: .3s;
+            }
+
+            .login-1 .login-form button:hover,
+            .login-1 .login-form input[type=submit]:hover {
+                color: #ffffff;
+                box-shadow: inset 250px 0 0 0 #44c7f5;
+            }
+        </style>
+    </head>
     <body>
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h1 class="card-title">Login</h1>
+        <div class="wrapper login-1">
+            <div class="container">
+                <div class="col-left">
+                    <div class="login-text">
+                        <h2>Welcome Back</h2>
+                        <p>Create your account.</p>
+                        <a class="btn" href="{{ route('register')}}">Sign Up</a>
                     </div>
-                    @if (Session::has('error'))
+                </div>
+                <div class="col-right">
+                    <div class="login-form">
+                        @if (Session::has('error'))
                     <div class="alert-danger" role="alert">
                         {{Session::get('error')}}
                     @endif
-                    </div>
-                    <div class="card-body">
-                    <form action="{{route ('login')}}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                        <div id="emailHelp" class="form-text"></div>
-                        </div>
-                        <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+                        <h2 style="text-align: center">Login</h2>
+                        <form action="{{ route('login')}}" method="POST">
+                            <p>
+                                <label>Username or email address<span>*</span></label>
+                                <input name="email" type="text" placeholder="Username or Email" required>
+                            </p>
+                            <p>
+                                <label>Password<span>*</span></label>
+                                <input name="password" type="password" placeholder="Password" required>
+                            </p>
+                            <p>
+                                <input type="submit" value="Log In" />
+                            </p>
+                           
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-    </html>
-</body>
 </html>
