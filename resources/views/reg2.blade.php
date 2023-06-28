@@ -238,8 +238,8 @@
                 <div class="col-left">
                     <div class="login-text">
                         <h2>Welcome Back</h2>
-                        <p>Create your account.</p>
-                        <a class="btn" href="{{ route('register')}}">Sign Up</a>
+                        <p>Login</p>
+                        <a class="btn" href="{{ route('login')}}">Sign Up</a>
                     </div>
                 </div>
                 <div class="col-right">
@@ -248,19 +248,26 @@
                     <div class="alert-danger" role="alert">
                         {{Session::get('error')}}
                     @endif
-                        <h2 style="text-align: center">Login</h2>
-                        <form action="{{ route('login')}}" method="POST">
-                            @csrf
+                        <h2 style="text-align: center">Create Account</h2>
+                        <form action="{{ route('register')}}" method="POST">
                             <p>
-                                <label>Username or email address<span>*</span></label>
-                                <input name="email" type="text" placeholder="Username or Email" required>
+                                <label>Name<span>*</span></label>
+                                <input name="name" type="text" placeholder="Name" required>
+                            </p>
+                            <p>
+                                <label>Email<span>*</span></label>
+                                <input name="email" type="text" placeholder="Email" required>
+                            </p>
+                            <p>
+                                <label>Phone Number<span>*</span></label>
+                                <input name="phone" type="text" placeholder="Phone Number" required>
                             </p>
                             <p>
                                 <label>Password<span>*</span></label>
                                 <input name="password" type="password" placeholder="Password" required>
                             </p>
                             <p>
-                                <input type="submit" value="Log In" />
+                                <input type="submit" value="Register" />
                             </p>
                            
                         </form>
