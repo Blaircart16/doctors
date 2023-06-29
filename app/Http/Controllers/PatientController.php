@@ -17,8 +17,11 @@ class PatientController extends Controller
         // Get the patients associated with the authenticated user
         $patients = $user->patients;
     
-        $patients = Patient::orderBy('created_at', 'DESC')->get();
-
+        // $patients = Patient::orderBy('created_at', 'DESC')->get(); 
+        if (request()->wantsJson()) {
+            return response()->json($patients);
+        }
+    
         return view('patients.index', compact('patients'));
     }
 
@@ -89,6 +92,19 @@ class PatientController extends Controller
 
         return redirect()->route('patients')->with('success', 'Patient deleted successfully');
     }
+    public function api($id)
+{
+    // Find the patient by ID
+    $patient = Patient::find($id);
+
+    // Check if the patient exists
+    if (!$patient) {
+        return response()->json(['message' => 'Patient not found'], 404);
+    }
+
+    return response()->json($patient);
+}
+
 }
 
 ?>
