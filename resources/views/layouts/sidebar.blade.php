@@ -60,5 +60,7 @@
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
     
-    
   </ul>
+  <style>
+    z-index: 999;
+  </style>

@@ -17,7 +17,6 @@ class Patient extends Model
         'DOB',
         'gender',
         'medicalCondition',
-        'caretakerName',
         'user_id',
     ];
 

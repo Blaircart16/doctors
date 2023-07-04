@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CaretakerController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,12 @@ Route::group(['middleware' => 'guest'], function (){
 });
 Route::group(['middleware' => 'auth'], function (){
     Route::get('', [PatientController::class, 'index'])->name('patients');
-    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::delete('/logout', [CustomAuthController::class, 'logout'])->name('logout');
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
+    Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+    Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
 
     Route::prefix('patients')->group(function () {
         Route::get('', [PatientController::class, 'index'])->name('patients');
