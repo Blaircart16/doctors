@@ -21,8 +21,10 @@ class PatientController extends Controller
         if (request()->wantsJson()) {
             return response()->json($patients);
         }
-    
-        return view('patients.index', compact('patients'));
+        $patients = Patient::with('caretaker')->get();
+
+        return view('patients.index', ['patients' => $patients]);
+     //   return view('patients.index', compact('patients'));
     }
 
     /**

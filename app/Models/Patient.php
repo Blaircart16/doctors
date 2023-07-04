@@ -37,4 +37,10 @@ class Patient extends Model
     public function location(){
         return $this->hasMany(Fence::class);
     }
+   
+    public function caretaker()
+{
+    return $this->hasOne(Caretaker::class, 'patientID');
+}
+
 }

@@ -5,7 +5,7 @@
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">Doctor<sup></sup></div>
+      <div class="sidebar-brand-text mx-3">EMOSENSE<sup></sup></div>
     </a>
     
     <!-- Divider -->
@@ -17,18 +17,40 @@
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Home</span></a>
     </li> --}}
+
+    <li class="nav-item">
+      <a class="nav-link" href="/home">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span></a>
+    </li>
     
     <li class="nav-item">
       <a class="nav-link" href="{{ route('patients') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>patient</span></a>
+        <span>Register Patient</span></a>
     </li>
-    
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('caretakers') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Create Caretaker Account</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('patients') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Patient Files</span></a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="/profile">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Profile</span></a>
     </li>
+
+  
+    
+   
     
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

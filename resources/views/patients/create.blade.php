@@ -30,11 +30,7 @@
                 <input type="text" name="medicalCondition" id="medicalCondition" class="form-control" placeholder="Medical Condition" required>
             </div>
         </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="caretakerName">Caretaker Name:</label>
-                <input type="text" name="caretakerName" id="caretakerName" class="form-control" placeholder="Caretaker Name" required>
-            </div>
+        
             <div class="col">
                 <label for="dob-input">Date of Birth:</label>
                 <input type="date" name="DOB" id="dob-input" class="form-control" required>

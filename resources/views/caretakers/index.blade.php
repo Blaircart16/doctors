@@ -2,8 +2,8 @@
 
 @section('contents')
     <div class="d-flex align-items-center justify-content-between">
-        <h1 class="mb-0">List patient</h1>
-        <a href="{{ route('patients.create') }}" class="btn btn-primary">Add patient</a>
+        <h1 class="mb-0">Caretakers</h1>
+        <a href="{{ route('caretakers.create') }}" class="btn btn-primary">Add Caretaker</a>
     </div>
     <hr />
     @if(Session::has('success'))
@@ -16,33 +16,31 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Address</th>
-                <th>Gender</th>
-                <th>Medical Condition</th>
-                <th>Caretaker Name</th>
-                <th>Age</th>
+                <th>Relationship</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Patient Name</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($patients as $rs)
+            @foreach($caretakers as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
                     <td class="align-middle">{{ $rs->name }}</td>
-                    <td class="align-middle">{{ $rs->address }}</td>
-                    <td class="align-middle">{{ $rs->gender }}</td>
-                    <td class="align-middle">{{ $rs->medicalCondition }}</td>
+                    <td class="align-middle">{{ $rs->relationship }}</td>
+                    <td class="align-middle">{{ $rs->contact }}</td>
+                    <td class="align-middle">{{ $rs->email }}</td>
                     <td class="align-middle">
-    @if ($rs->caretaker)
-        {{ $rs->caretaker->name }}
+    @if ($rs->patient)
+        {{ $rs->patient->name }}
     @endif
 </td>
 
-                    <td class="align-middle">{{ \Carbon\Carbon::parse($rs->DOB)->age }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('patients.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('patients.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('patients.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                            <a href="{{ route('caretakers.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('caretakers.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('caretakers.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger m-0">Delete</button>

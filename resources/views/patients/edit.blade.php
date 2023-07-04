@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Patient')
-
 @section('contents')
-    <h1 class="mb-0">Edit Patient</h1>
-    <hr />
+<div class="mb-1">
+    <a href="{{ route('patients') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i></a>
+</div>
+<h1 class="fas fa-arrow-center">Edit Patient</h1>
+<hr>
+    
+</hr>
+
     <form action="{{ route('patients.update', $patient->id) }}" method="POST">
         @csrf
         @method('PUT')

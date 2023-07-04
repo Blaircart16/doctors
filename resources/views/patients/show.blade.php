@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('contents')
-    <h1 class="mb-0">Patient Details</h1>
-    <hr />
+<div class="mb-1">
+    <a href="{{ route('patients') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i></a>
+</div>
+<h1 class="fas fa-arrow-center">Patient Details</h1>
+  <hr>  
+</hr>
+
     <div class="row">
         <!-- Name -->
         <div class="col mb-3">

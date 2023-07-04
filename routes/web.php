@@ -4,6 +4,8 @@ use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CaretakerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +41,20 @@ Route::group(['middleware' => 'auth'], function (){
         Route::put('edit/{id}', [PatientController::class, 'update'])->name('patients.update');
         Route::delete('destroy/{id}', [PatientController::class, 'destroy'])->name('patients.destroy');
     });
+
+    Route::prefix('caretakers')->group(function () {
+        Route::get('', [CaretakerController::class, 'index'])->name('caretakers');
+        Route::get('create', [CaretakerController::class, 'create'])->name('caretakers.create');
+        Route::post('store', [CaretakerController::class, 'store'])->name('caretakers.store');
+        Route::get('show/{id}', [CaretakerController::class, 'show'])->name('caretakers.show');
+        Route::get('edit/{id}', [CaretakerController::class, 'edit'])->name('caretakers.edit');
+        Route::put('edit/{id}', [CaretakerController::class, 'update'])->name('caretakers.update');
+        Route::delete('destroy/{id}', [CaretakerController::class, 'destroy'])->name('caretakers.destroy');
+
     Route::get('/profile', [App\Http\Controllers\CustomAuthController::class, 'profile'])->name('profile');
+
+});
+
 });
 
 
