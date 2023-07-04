@@ -17,7 +17,13 @@ class CaretakerController extends Controller
     return view('caretakers.index', ['caretakers' => $caretakers]);
 }
 
+public function total()
+    {
+        $user = auth()->user();
+        $caretakers = $user->caretakers->count();
 
+        return view('patients.home', compact('caretakers'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -87,18 +93,12 @@ class CaretakerController extends Controller
 
         return redirect()->route('caretakers')->with('success', 'Caretaker deleted successfully');
     }
-    public function api($id)
-{
-    // Find the patient by ID
-    $caretaker = caretaker::find($id);
+    public function api()
+    {
+        $caretakers = Caretaker::with('patient')->get();
 
-    // Check if the patient exists
-    if (!$caretaker) {
-        return response()->json(['message' => 'Caretaker not found'], 404);
+        return response()->json($caretakers);
     }
-
-    return response()->json($caretaker);
-}
 
 
 }

@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('emotion_recognition_results', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->date('DOB');
-            $table->string('gender');
-            $table->string('medicalCondition');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('audio_file_path');
+            $table->string('predicted_emotion');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('emotion_recognition_results');
     }
 };

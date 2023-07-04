@@ -26,7 +26,6 @@ class PatientController extends Controller
         return view('patients.index', ['patients' => $patients]);
      //   return view('patients.index', compact('patients'));
     }
-
     /**
      * Show the form for creating a new resource.
      */

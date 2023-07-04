@@ -38,7 +38,7 @@
         </div>
     
         <div class="row">
-            <div class="d-grid">
+            <div class="col text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

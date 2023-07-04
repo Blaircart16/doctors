@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('relationship');
             $table->string('contact');
             $table->string('email');
+            $table->string('password');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('patientID')->references('id')->on('patients');
             $table->timestamps();
         });

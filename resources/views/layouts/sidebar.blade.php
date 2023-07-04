@@ -12,11 +12,6 @@
     <hr class="sidebar-divider my-0">
     
     <!-- Nav Item - Home -->
-    {{-- <li class="nav-item">
-      <a class="nav-link" href="{{ route('home') }}">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Home</span></a>
-    </li> --}}
 
     <li class="nav-item">
       <a class="nav-link" href="/home">
@@ -34,12 +29,6 @@
       <a class="nav-link" href="{{ route('caretakers') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Create Caretaker Account</span></a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('patients') }}">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Patient Files</span></a>
     </li>
 
     <li class="nav-item">

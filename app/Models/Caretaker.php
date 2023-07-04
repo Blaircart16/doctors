@@ -15,7 +15,9 @@ class Caretaker extends Model
         'relationship',
         'contact',
         'email',
+        'password',
         'patientID',
+        'user_id'
     ];
     
     public function patient()
@@ -23,6 +25,10 @@ class Caretaker extends Model
         return $this->belongsTo(Patient::class, 'patientID');
     }
     
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
 

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AudioController;
+use App\Http\Controllers\CaretakerController;
 use App\Http\Controllers\EmotionController;
+use App\Http\Controllers\EmotionRecController;
 use App\Http\Controllers\FenceController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PatientaudioController;
@@ -13,9 +15,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
     
 });
-Route::get('/patients/{id}', [PatientController::class, 'api']);
-Route::get('/patientaudios', [PatientaudioController::class, 'api']);
+Route::get('/caretakers', [CaretakerController::class, 'api']);
+// Route::get('/patientaudios', [PatientaudioController::class, 'api']);
 Route::get('/emotions', [EmotionController::class, 'api']);
-Route::get('/fences', [FenceController::class, 'api']);
+// Route::get('/fences', [FenceController::class, 'api']);
 
-Route::get('/locations', [LocationController::class, 'api']);
+// Route::get('/locations', [LocationController::class, 'api']);
+Route::post('/regemotion', [EmotionRecController::class, 'recognizeEmotion']);

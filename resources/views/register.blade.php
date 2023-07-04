@@ -237,7 +237,7 @@
             <div class="container">
                 <div class="col-left">
                     <div class="login-text">
-                        <h2>Welcome Back</h2>
+                        <h2>Welcome</h2>
                         <p>Already Have an Account?</p>
                         <a class="btn" href="{{ route('login')}}">Login In Here</a>
                     </div>
