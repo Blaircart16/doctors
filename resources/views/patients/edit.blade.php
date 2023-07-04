@@ -37,10 +37,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col mb-3">
-                <label class="form-label">Caretaker Name</label>
-                <input type="text" name="caretakerName" class="form-control" placeholder="Caretaker Name" value="{{ $patient->caretakerName }}" >
-            </div>
+            
             <div class="col">
                 <label for="dob-input">Date of Birth:</label>
                 <input type="date" name="DOB" id="dob-input" class="form-control" required>
