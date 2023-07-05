@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::put('edit/{id}', [CaretakerController::class, 'update'])->name('caretakers.update');
         Route::delete('destroy/{id}', [CaretakerController::class, 'destroy'])->name('caretakers.destroy');
 
-Route::get('/profile', [App\Http\Controllers\CustomAuthController::class, 'profile'])->name('profile');
+        Route::get('/profile', [App\Http\Controllers\CustomAuthController::class, 'profile'])->name('profile');
 
 });
 

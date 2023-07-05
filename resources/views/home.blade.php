@@ -3,8 +3,9 @@
 @section('contents')
     <div class="d-flex align-items-center justify-content-between">
         <h1 class="mb-0">Dashboard</h1>
-        <a href="{{ route('patients.create') }}" class="btn btn-primary">Generate Analysis Reports</a>
+        <a href="{{ route('patients') }}" class="btn btn-primary">View Patients</a>
     </div>
+    
     <hr />
     <div class="row">
     <div class="col-md-6">
