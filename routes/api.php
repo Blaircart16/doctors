@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AudioController;
 use App\Http\Controllers\CaretakerController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\EmotionController;
 use App\Http\Controllers\EmotionRecController;
 use App\Http\Controllers\FenceController;
@@ -22,3 +23,10 @@ Route::get('/emotions', [EmotionController::class, 'api']);
 
 // Route::get('/locations', [LocationController::class, 'api']);
 Route::post('/regemotion', [EmotionRecController::class, 'recognizeEmotion']);
+
+
+// Route to handle incoming chat messages
+Route::post('/messages', [ChatController::class, 'store']);
+
+// Route to fetch chat history between two users
+Route::get('/messages/{senderId}/{receiverId}', [ChatController::class, 'show']);

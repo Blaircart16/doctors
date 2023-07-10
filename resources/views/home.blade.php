@@ -59,30 +59,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="card-title">Upcoming Appointments</h5>
-                </div>
-                <div class="card-body">
-                   
-<p>No upcoming appointments.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Calendar</h5>
-                </div>
-                <div class="card-body">
-                    <!-- Add your calendar implementation here -->
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('styles')

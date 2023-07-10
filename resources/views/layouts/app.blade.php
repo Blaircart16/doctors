@@ -52,7 +52,7 @@
       <!-- End of Main Content -->
   
       <!-- Footer -->
-      @include('layouts.footer')
+      {{-- @include('layouts.footer') --}}
       <!-- End of Footer -->
   
     </div>
@@ -75,5 +75,7 @@
   <script src="{{ asset('admin_assets/js/sb-admin-2.min.js') }}"></script>
   <!-- Page level plugins -->
   <script src="{{ asset('admin_assets/vendor/chart.js/Chart.min.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 </html>

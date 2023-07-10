@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PatientController;
+use GPBMetadata\Google\Firestore\V1Beta1\Firestore;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\HomeController;
@@ -21,6 +22,22 @@ use App\Http\Controllers\MessageController;
 Route::get('/', function () {
     return view('/register');
 });
+Route::get('/chat', function () {
+    return view('/chat');
+});
+Route::get('/insert', function () {
+    $stuRef = app('firebase.firestore')->database()->collection('Students')->newDocument();
+    $stuRef->set([
+        'name' => 'Jack',
+        'age' => '23',
+    ]);
+
+    // Additional code here if needed
+
+    return 'Data inserted successfully';
+});
+
+
 Route::group(['middleware' => 'guest'], function (){
     Route::get('/register', [CustomAuthController::class, 'register'])->name('register');
     Route::post('/register', [CustomAuthController::class, 'registerPost'])->name('register');

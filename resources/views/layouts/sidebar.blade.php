@@ -22,15 +22,19 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ route('patients') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Register Patient</span></a>
+        <span>Patients</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" href="{{ route('caretakers') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Create Caretaker Account</span></a>
+        <span> Caretakers</span></a>
     </li>
-
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('caretakers') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Messages</span></a>
+    </li>
   
     
    

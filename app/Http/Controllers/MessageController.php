@@ -11,16 +11,8 @@ class MessageController extends Controller
 {
     public function index()
     {
-        // Fetch all message threads of the authenticated user
-        $threads = Message::where(function ($query) {
-                $query->where('sender_id', Auth::id())
-                    ->orWhere('recipient_id', Auth::id());
-            })
-            ->with('sender', 'recipient')
-            ->orderBy('created_at', 'desc')
-            ->get();
     
-        return view('messages.index', compact('threads'));
+        return view('messages.index');
     }
     
 
