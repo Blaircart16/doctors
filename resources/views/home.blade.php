@@ -14,7 +14,7 @@
                 <h5 class="card-title">Monitored Patients</h5>
             </div>
             <div class="card-body">
-                <p>Registered patients: <strong>{{ $patientsCount }}</strong></p>
+                <p>Monitored patients: <strong>{{ $patientsCount }}</strong></p>
             </div>
         </div>
     </div>

@@ -25,8 +25,9 @@ Route::get('/', function () {
 Route::get('/chat', function () {
     return view('/chat');
 });
+
 Route::get('/insert', function () {
-    $stuRef = app('firebase.firestore')->database()->collection('Students')->newDocument();
+    $stuRef = app('firebase.firestore')->database()->collection('chats')->newDocument();
     $stuRef->set([
         'name' => 'Jack',
         'age' => '23',
